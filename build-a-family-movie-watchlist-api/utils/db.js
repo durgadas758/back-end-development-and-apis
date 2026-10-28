@@ -19,9 +19,11 @@ export function findByUsername(username) {
   return users.find((u) => u.username === username) || null;
 }
 
+
 export function findById(id) {
-  return users.find((u) => u.id === id) || null;
+  return users.find((u) => String(u.id) === String(id)) || null;
 }
+
 
 export function getWatchlist(userId) {
   if (!findById(userId)) {
